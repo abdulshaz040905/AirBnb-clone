@@ -1,0 +1,81 @@
+<!-- ! Always treat data coming from the client as untrusted.
+! Validate everything again on the server. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderLust</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- 🌿 CSS: Always use absolute paths for static files -->
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- 📦 Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <!-- ⭐ Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/css/rating.css" />
+  </head>
+
+  <body>
+    <div class="main d-flex flex-column min-vh-100">
+      <!-- 🔹 Navbar -->
+      <%- include("../includes/navbar.ejs") %>
+
+      <!-- 🔹 Flash messages & dynamic content -->
+      <main class="container-fluid flex-fill py-3">
+        <%- include("../includes/flash.ejs") %> <%- body %>
+      </main>
+
+      <!-- 🔹 Footer -->
+      <%- include("../includes/footer.ejs") %>
+    </div>
+
+    <!-- 📦 Bootstrap Bundle JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- 🛠 Custom Scripts -->
+    <script src="/js/formValidation.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 300, // animation duration in ms
+        once: false, // if true: animation happens only once
+        offset: 120, //  Animation starts 120px before the element is fully in view.
+        // delay: 200, // All animations wait 200ms before starting.
+        mirror: true, //When scrolling back up, the animation plays again.
+        // anchorPlacement: "center-bottom", //"element-part-viewport-part"
+      });
+    </script>
+  </body>
+</html>
+
+<!-- offset: 100  “Start the animation before the element reaches the trigger point, by 100 pixels.”
+offset: -100  Wait until the element goes 100 pixels past the trigger point before animating.” -->
