@@ -92,6 +92,10 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 // 404 Not Found for unmatched routes
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page not found"));
