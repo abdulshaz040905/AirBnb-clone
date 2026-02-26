@@ -54,7 +54,6 @@ This project was developed as a **major academic project** to strengthen full‑
 ### Database
 
 * MongoDB
-* Mongoose ODM
 
 ### Tools & Utilities
 
@@ -118,10 +117,6 @@ http://localhost:3000
 ```
 
 ---
-
-## 📸 Screenshots
-
-*Add project screenshots here (Home page, Listing page, Login page, etc.)*
 
 ---
 
